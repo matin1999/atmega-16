@@ -1,0 +1,5 @@
+VERSION:3 SOURCE_TIMESTAMP:5574B6DC
+NODE:I LEVEL:0 LINE:1 "C:\cvavr\inc\mega16.h"
+NODE:V LEVEL:0 LINE:4 "i -> R4,R5"
+NODE:F LEVEL:0 LINE:7 "main(void)"
+NODE:F LEVEL:0 LINE:24 "ext_int0_isr(void)"

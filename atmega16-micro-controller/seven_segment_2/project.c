@@ -1,0 +1,33 @@
+#include <mega16.h>
+
+// Declare your global variables here
+int i = 0;
+
+
+void main(void)
+{
+// Declare your local variables here
+int counter[] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};
+
+DDRC = 0xFF;
+
+GICR = (1 << INT0);
+MCUCR = (1 << ISC01)|(0 << ISC00);
+#asm("sei")
+i = 0;
+while (1)
+      {             
+      PORTC = counter[i];
+      }
+}
+
+interrupt [EXT_INT0] void ext_int0_isr(void)
+{
+    if (i != 9){
+        i++;    
+        }else
+        {
+        i=0;
+        }
+
+}
